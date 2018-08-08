@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,Text,StyleSheet } from 'react-native';
+import { View,Text,StyleSheet,Button } from 'react-native';
 
 export default  class appexponovo extends Component {
 
@@ -15,6 +15,12 @@ export default  class appexponovo extends Component {
 
       <View>
       <Text style={styles.texto}>Meu nome é {nome} e a soma de 2 + 2 é {this.somar(2, 2)}</Text>
+
+      <Button title="Aperte" onPress={()=>{
+        alert("Me apertou!");
+      
+      }}/>
+
       </View>
 
       );
