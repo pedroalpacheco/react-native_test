@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
-import { View,Text,StyleSheet,Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image} from 'react-native';
 
-export default  class appexponovo extends Component {
+class Imagem extends Component {
+  render() {
 
-  somar(n1,n2){
+    let imagem = {
+      uri: 'https://i1.wp.com/gamelogia.com.br/wp-content/uploads/2016/11/' + this.props.nome + '.jpg'
+    };
+
+    return (
+      <Image source={imagem} style={{ width: 300, height: 300 }} />
+    );
+  }
+}
+
+export default class appexponovo extends Component {
+
+  somar(n1, n2) {
     return n1 + n2;
   }
 
-  render(){
+  render() {
 
     let nome = "Pedro Pacheco"
-    
-    return(
+   
+
+    return (
 
       <View>
-      <Text style={styles.texto}>Meu nome é {nome} e a soma de 2 + 2 é {this.somar(2, 2)}</Text>
+        <Text style={styles.texto}>Meu nome é {nome} e a soma de 2 + 2 é {this.somar(2, 2)}</Text>
+        
+        
 
-      <Button title="Aperte" onPress={()=>{
-        alert("Me apertou!");
-      
-      }}/>
+        <Button title="Aperte" onPress={() => {
+          alert("Me apertou!");
+
+        }} />
+
+        <Imagem nome='gamer'/>
 
       </View>
 
-      );
+    );
   }
 }
 const styles = StyleSheet.create({
-  texto:{
-    fontSize:30
+  texto: {
+    fontSize: 30
   }
 });
