@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, Image} from 'react-native';
+import { View, Text, TextInput, StyleSheet} from 'react-native';
 
 
 export default class appexponovo extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={texto:''};
+    this.mudarTexto = this.mudarTexto.bind(this);
+  }
+
+  mudarTexto(t){
+    let s = this.state;
+    if(t.length > 0) {
+      s.texto = 'ola '+t;
+    }else{
+      s.texto='';
+    }
+    this.setState(s);
+  }
+
   render() {
     return (
-
-      <View style={{flex:1, flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-      <View style={{width:50, height:50, backgroundColor:'blue'}}></View>
-      <View style={{width:50, height:50, backgroundColor:'white'}}></View>
-      <View style={{flex:1, height:50, backgroundColor:'white'}}><Text>Bandeira USA</Text></View>
-      <View style={{width:50, height:50, backgroundColor:'red'}}></View>
-
+      <View style={{paddingTop:30}}>
+        <TextInput style={styles.input} placeholder="Qual seu nome?" onChangeText={this.mudarTexto}/>
+        <Text style={styles.texto}>{this.state.texto}</Text>
       </View>
-
     );
   }
 }
 const styles = StyleSheet.create({
-  texto: {
-    fontSize: 30
+  input:{
+    height:40,
+    borderWidth:1,
+    borderColor:'#000000',
+    margin:10,
+    padding:10
+  },
+  texto:{
+    fontSize:20,
+    textAlign:'center'
   }
-});
+})
