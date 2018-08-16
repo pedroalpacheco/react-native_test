@@ -27,6 +27,10 @@ export default class App extends React.Component {
     this.setState(s);
     this.atualizar();
   }
+  reinicio(){
+    this.state = {consumido:0,status:'Ruim',pct:0};
+    this.atualizar();
+  }
   
 
   render() {
@@ -55,6 +59,7 @@ export default class App extends React.Component {
               <View style={styles.btnArea}>
               <Button title="Beber 200ml" onPress={this.addCopo}/>
               </View>
+             
         </View>
 
         </ImageBackground>
