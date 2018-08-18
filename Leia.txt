@@ -1,0 +1,3 @@
+
+#Cria projeto - Criar como root
+reate-react-native-app nome-projeto
