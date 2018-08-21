@@ -9,9 +9,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 
-constructor(props){
+constructor(props);{
   super(props);
-  htis.state = {
+  this.state = {
     flatData:[
       {key:1,nome:'Pedro',idade:'40'},
       {key:2,nome:'João',idade:'23'},
@@ -24,7 +24,7 @@ constructor(props){
   }
 }
 
-flatRender(item){
+flatRender(item);{
   return(
     <Text style={styles.flatItem}>{item.nome}, {item.idade}anos</Text>
   );
